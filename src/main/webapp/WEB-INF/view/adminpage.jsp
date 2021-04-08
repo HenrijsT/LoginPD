@@ -16,23 +16,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="static/js/jquery-1.11.1.min.js"></script>
-<script src="static/js/bootstrap.min.js"></script>
 
-    <script>
-     function loadlink(){
-         $('#table_refresh').text(
-
-         );
-     }
-
-     loadlink(); // This will run on page load
-     setInterval(function(){
-         loadlink() // this will run after every 5 seconds
-     }, 1000);
-     </script>
 
 </head>
 <body>
@@ -63,7 +47,7 @@
                 <div class="container text-center" id="tasksDiv">
                 	<h3>All Users</h3>
                 	<hr>
-                	<div id="table_refresh" class="table-responsive">
+                	<div class="table-responsive">
                          <table class="table table-striped table-bordered">
                             <thead>
                                 <tr>
@@ -96,56 +80,58 @@
             	</div>
             </c:when>
             		<c:when test="${mode=='MODE_UPDATE' }">
-                    			<div class="container text-center">
-                    				<h3>Update User</h3>
-                    				<hr>
-                    				<form class="form-horizontal" method="POST" action="edit-save-user">
-                    				    <c:if test="${not empty error }">
-                                        	<div class= "alert alert-danger">
-                                        		<c:out value="${error }"></c:out>
-                                        		</div>
-                                        </c:if>
-                    					<input type="hidden" name="id" value="${user.id }" />
-                    					<div class="form-group">
-                    						<label class="control-label col-md-3">Username</label>
-                    						<div class="col-md-7">
-                    							<input type="text" class="form-control" name="username"
-                    								value="${user.username }" readonly/>
-                    						</div>
-                    					</div>
-                    					<div class="form-group">
-                    						<label class="control-label col-md-3">Password</label>
-                    						<div class="col-md-7">
-                    							<input type="password" class="form-control" name="password"
-                    								value="" />
-                    						</div>
-                    					</div>
-                    					<div class="form-group">
-                    						<label class="control-label col-md-3">Full Name</label>
-                    						<div class="col-md-7">
-                    							<input type="text" class="form-control" name="fullName"
-                    								value="${user.fullName }" />
-                    						</div>
-                    					</div>
-                    					<div class="form-group">
-                    						<label class="control-label col-md-3">Age </label>
-                    						<div class="col-md-3">
-                    							<input type="text" class="form-control" name="age"
-                    								value="${user.age }" />
-                    						</div>
-                    					</div>
-                    					<input type="hidden" name="regDate" value="${user.regDate }" />
-                                        <input type="hidden" name="roles" value="${user.roles }" />
-                    					<div class="form-group ">
-                    						<input type="submit" class="btn btn-primary" value="Update" />
-                    					</div>
-                    				</form>
+                    	<div class="container text-center">
+                    		<h3>Update User</h3>
+                    		<hr>
+                    		<form class="form-horizontal" method="POST" action="edit-save-user">
+                    		    <c:if test="${not empty error }">
+                                      	<div class= "alert alert-danger">
+                                      		<c:out value="${error }"></c:out>
+                                      		</div>
+                                      </c:if>
+                    			<input type="hidden" name="id" value="${user.id }" />
+                    			<div class="form-group">
+                    				<label class="control-label col-md-3">Username</label>
+                    				<div class="col-md-7">
+                    					<input type="text" class="form-control" name="username"
+                    						value="${user.username }" readonly/>
+                    				</div>
                     			</div>
-                    		</c:when>
+                    			<div class="form-group">
+                    				<label class="control-label col-md-3">Password</label>
+                    				<div class="col-md-7">
+                    					<input type="password" class="form-control" name="password"
+                    						value="" />
+                    				</div>
+                    			</div>
+                    			<div class="form-group">
+                    				<label class="control-label col-md-3">Full Name</label>
+                    				<div class="col-md-7">
+                    					<input type="text" class="form-control" name="fullName"
+                    						value="${user.fullName }" />
+                    				</div>
+                    			</div>
+                    			<div class="form-group">
+                    				<label class="control-label col-md-3">Age </label>
+                    				<div class="col-md-3">
+                    					<input type="text" class="form-control" name="age"
+                    						value="${user.age }" />
+                    				</div>
+                    			</div>
+                    			<input type="hidden" name="regDate" value="${user.regDate }" />
+                                      <input type="hidden" name="roles" value="${user.roles }" />
+                    			<div class="form-group ">
+                    				<input type="submit" class="btn btn-primary" value="Update" />
+                    			</div>
+                    		</form>
+                    	</div>
+                    </c:when>
     	</c:choose>
 
-
-
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="static/js/jquery-1.11.1.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
 </body>
 </html>
 
