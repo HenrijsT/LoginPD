@@ -100,8 +100,8 @@
                     			<div class="form-group">
                     				<label class="control-label col-md-3">Password</label>
                     				<div class="col-md-7">
-                    					<input type="password" class="form-control" name="password"
-                    						value="" />
+                    					<input required="required" type="password" class="form-control" 
+								name="password" value="" />
                     				</div>
                     			</div>
                     			<div class="form-group">
